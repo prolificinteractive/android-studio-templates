@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<template
+    format="4"
+    revision="2"
+    name="ComponentModule"
+    description="Creates a component and its module for an activity"
+    minApi="3"
+    minBuildApi="3">
+
+    <category value="Dagger" />
+
+    <parameter
+        id="className"
+        name="Activity Name"
+        type="string"
+        constraints="activity|nonempty|unique"
+        default="BlankActivity"
+        help="The name of the activity class to create a component for" />
+
+    <parameter
+        id="Name"
+        name="Component Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="Blank"
+        suggest="${underscoreToCamelCase(classToResource(className))}"
+        help="The name of the component/module to create" />
+
+
+    <parameter
+        id="lName"
+        name="Name"
+        type="string"
+        constraints="nonempty|unique"
+        default="blank"
+        visibility="false"
+        suggest="${classToResource(className)}"
+        help="The name in lowercase" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

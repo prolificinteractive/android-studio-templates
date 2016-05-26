@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<template
+    format="4"
+    revision="2"
+    name="Fragment"
+    description="Creates an MVVM package with a fragment and its View/ViewModel"
+    minApi="3"
+    minBuildApi="3">
+
+    <category value="Mvvm" />
+
+    <parameter
+        id="className"
+        name="Fragment Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="BlankFragment"
+        help="The name of the fragment class to create" />
+
+    <parameter
+        id="fragmentName"
+        name="Fragment Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="fragment_blank"
+        suggest="fragment_${classToResource(className)}"
+        help="The name of the layout to create" />
+
+    <parameter
+        id="Name"
+        name="Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="Blank"
+        visibility="false"
+        suggest="${underscoreToCamelCase(classToResource(className))}"
+        help="The name of the view model to create" />
+        
+    <parameter
+        id="includeComponent"
+        name="Include component?"
+        type="boolean"
+        default="true"
+        help="Add dagger 2 component to fragment" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
