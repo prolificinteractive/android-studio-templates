@@ -1,16 +1,14 @@
 package ${packageName};
 
-import android.content.Context;
 import android.content.Intent;
 import ${packageName}.R;
-import ${packageName}.base.BaseBindingFragment;
-import ${packageName}.view.${Name}View;
-import ${packageName}.viewmodel.${Name}ViewModel;
+<#if applicationPackage??>import ${applicationPackage}.R;</#if>
+<#if applicationPackage??>import ${applicationPackage}.dagger.Injector;</#if>
+<#if applicationPackage??>import ${applicationPackage}.ui.base.mvp.PresenterFragment;</#if>
 
 public class ${className} 
-    extends BaseBindingFragment<Fragment${Name}Binding, ${Name}ViewModel, ${Name}View> 
+    extends PresenterFragment<${Name}Presenter, ${Name}View> 
     implements ${Name}View {
-
 
   public static ${className} newInstance() {
     return new ${className}();
@@ -22,7 +20,7 @@ public class ${className}
 
   @Override protected void initializeDependencyInjector() {
     <#if includeComponent>
-    getComponent(${Name}Component.class).inject(this);
+    Injector.obtain(getContext(), ${Name}Component.class).inject(this);
     </#if>
   }
 }
