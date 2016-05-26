@@ -4,9 +4,11 @@ Android Studio Templates
 A set of Android studio package/activities/classes templates.
 
 Installation of templates
-----------------------------
+-------------------------
 
- * Run the `install.sh` script.
+ * Copy templates you want to include in Android Studio from the package-templates folder.
+ * Go to your Android Studio app, then Contents/plugins/android/lib/templates/other (Full path: /Applications/Android Studio.app/Contents/plugins/android/lib/templates/other).
+ * Paste the templates in the 'other' folder
  * Restart Android Studio if it's running.
  * Right click package -> New
  * Use new templates
