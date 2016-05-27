@@ -54,6 +54,16 @@
         help="Add dagger 2 component to activity" />
 
     <parameter
+        id="appName"
+        name="Application class Name"
+        type="string"
+        constraints="nonempty"
+        default="YourApp"
+        visibility="includeComponent"
+        suggest="YourApp"
+        help="The name of your application class" />
+
+    <parameter
         id="includeApi"
         name="Include api client in presenter?"
         type="boolean"
