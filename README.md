@@ -1,6 +1,6 @@
 # Android Studio Templates
 
-A set of Android studio package/activities/classes templates.
+A set of Android studio package/activities/classes templates.Those templates are based on a system called FreeMarker. You can learn how to structure and format templates here: [Android ADT Template Format Document](http://www.i-programmer.info/professional-programmer/resources-and-tools/6845-android-adt-template-format-document.html).
 
 ## What to do?
 
