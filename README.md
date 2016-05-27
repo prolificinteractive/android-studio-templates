@@ -2,7 +2,7 @@
 
 A set of Android studio package/activities/classes templates.
 
-## What to do
+## What to do?
 
 ### Installation
 
