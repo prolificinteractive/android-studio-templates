@@ -1,6 +1,6 @@
 package ${packageName}.${packName}.view;
 
-import ${packageName}.base.BaseView;
+<#if applicationPackage??>import ${applicationPackage}.base.BaseView;</#if>
 
 public interface ${Name}View extends BaseView {
 }

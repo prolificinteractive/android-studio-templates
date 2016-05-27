@@ -7,7 +7,7 @@ import dagger.Component;
     modules = {
         BaseActivityModule.class
     },
-    dependencies = AppComponent.class
+    dependencies = YourAppComponent.class
 )
 public interface ${Name}Component {
   void inject(${className} activity);
@@ -19,8 +19,8 @@ public interface ${Name}Component {
 
     public static ${Name}Component init(${className} activity) {
       return Dagger${Name}Component.builder()
-          .appComponent(
-              Injector.obtain(activity.getApplicationContext(), AppComponent.class))
+          .yourAppComponent(
+              Injector.obtain(activity.getApplicationContext(), YourAppComponent.class))
           .baseActivityModule(new BaseActivityModule(activity))
           .${lName}Module(new ${Name}Module(activity))
           .build();

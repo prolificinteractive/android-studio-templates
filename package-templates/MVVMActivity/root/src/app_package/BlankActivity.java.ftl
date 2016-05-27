@@ -2,8 +2,8 @@ package ${packageName}.${packName};
 
 import android.content.Context;
 import android.content.Intent;
-import ${packageName}.R;
-import ${packageName}.base.BaseBindingActivity;
+<#if applicationPackage??>import ${applicationPackage}.R;</#if>
+<#if applicationPackage??>import ${applicationPackage}.ui.base.BaseBindingActivity;</#if>
 import ${packageName}.${packName}.view.${Name}View;
 import ${packageName}.${packName}.viewmodel.${Name}ViewModel;
 

@@ -1,6 +1,6 @@
 package ${packageName}.${packName}.viewmodel;
 
-import ${packageName}.base.BaseViewModel;
+<#if applicationPackage??>import ${applicationPackage}.base.BaseViewModel;</#if>
 import ${packageName}.${packName}.view.${Name}View;
 import javax.inject.Inject;
 

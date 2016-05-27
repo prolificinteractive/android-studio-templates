@@ -1,6 +1,6 @@
 package ${packageName};
 
-import ${packageName}.PerActivity;
+<#if applicationPackage??>import ${applicationPackage}.dagger.PerActivity;</#if>
 import dagger.Module;
 import dagger.Provides;
 
