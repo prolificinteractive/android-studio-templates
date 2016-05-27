@@ -1,6 +1,6 @@
-package ${packageName}.${packName}.view;
+package ${packageName}.${packName};
 
-<#if applicationPackage??>import ${applicationPackage}.base.BaseView;</#if>
+<#if applicationPackage??>import ${applicationPackage}.ui.base.mvp.BaseMvpView;</#if>
 
-public interface ${Name}View extends BaseView {
+public interface ${Name}View extends BaseMvpView {
 }
