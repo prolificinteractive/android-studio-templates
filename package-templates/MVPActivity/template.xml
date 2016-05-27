@@ -34,7 +34,7 @@
         default="Blank"
         visibility="false"
         suggest="${underscoreToCamelCase(classToResource(className))}"
-        help="The name of the view model to create" />
+        help="The name of the presenter to create" />
 
     <parameter
         id="packName"
