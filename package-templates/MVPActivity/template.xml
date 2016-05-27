@@ -54,7 +54,7 @@
         help="Add dagger 2 component to activity" />
 
     <parameter
-        id="includeClient"
+        id="includeApi"
         name="Include api client in presenter?"
         type="boolean"
         default="true"
@@ -66,9 +66,17 @@
         type="string"
         constraints="nonempty"
         default="YourApiClient"
-        visibility="includeClient"
+        visibility="includeApi"
         suggest="YourApiClient"
         help="The name of your api client" />
+
+    <parameter
+        id="includeSubscription"
+        name="Include subscription in presenter?"
+        type="boolean"
+        default="true"
+        visibility="includeApi"
+        help="Add subscription to presenter" />
 
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />

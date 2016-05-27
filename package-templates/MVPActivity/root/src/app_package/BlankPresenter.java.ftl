@@ -1,30 +1,23 @@
 package ${packageName}.${packName};
 
 <#if applicationPackage??>import ${applicationPackage}.dagger.PerActivity;</#if>
-<#if includeClient??><#if applicationPackage??>import ${applicationPackage}.data.api.${clientName};</#if></#if>
-<#if includeClient??><#if applicationPackage??>import ${applicationPackage}.data.util.RxUtils;</#if></#if>
+<#if includeApi && applicationPackage??>import ${applicationPackage}.data.api.${clientName};</#if>
+<#if includeApi && applicationPackage??>import ${applicationPackage}.data.util.RxUtils;</#if>
 <#if applicationPackage??>import ${applicationPackage}.ui.base.mvp.Presenter;</#if>
 import javax.inject.Inject;
-<#if includeClient??>import rx.Subscription;</#if>
+<#if includeApi>import rx.Subscription;</#if>
 
 @PerActivity
 public class ${Name}Presenter extends Presenter<${Name}View> {
 
-  <#if includeClient??>
-  private final ${clientName} api;
-  
-  private Subscription dataSubscription;
-  </#if>
+  <#if includeApi>private final ${clientName} api;</#if>  
+  <#if includeApi && includeSubscription>private Subscription dataSubscription;</#if>
 
-  @Inject public ${Name}Presenter(<#if includeClient??>final ${clientName} api</#if>) {
-	  <#if includeClient??>
-    this.api = api;
-    </#if>
+  @Inject public ${Name}Presenter(<#if includeApi>final ${clientName} api</#if>) {
+    <#if includeApi>this.api = api;</#if>
   }
-  <#if includeClient??>
- 
+  
   @Override protected void onDestroyed() {
-    RxUtils.unSubscribeIfNeeded(dataSubscription);
+    <#if includeApi && includeSubscription>RxUtils.unSubscribeIfNeeded(dataSubscription);</#if>
   }
-  </#if>
 }

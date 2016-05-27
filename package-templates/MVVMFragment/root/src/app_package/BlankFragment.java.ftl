@@ -3,7 +3,7 @@ package ${packageName};
 import android.content.Context;
 import android.content.Intent;
 <#if applicationPackage??>import ${applicationPackage}.R;</#if>
-<#if applicationPackage??>import ${applicationPackage}.base.BaseBindingFragment;</#if>
+<#if applicationPackage??>import ${applicationPackage}.ui.base.BaseBindingFragment;</#if>
 import ${packageName}.view.${Name}View;
 import ${packageName}.viewmodel.${Name}ViewModel;
 
