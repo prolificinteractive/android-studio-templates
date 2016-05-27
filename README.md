@@ -11,6 +11,10 @@ A set of Android studio package/activities/classes templates.
  * Paste the templates in the 'other' folder
  * Restart Android Studio if it's running.
 
+Note: Make sure to check the repo for updated templates. You have to remove and add the updated template again.
+
+Note 2: Android Studio will remove the template on each update. You need to install it after each update.
+
 ### Usage
 
  * Launch Android Studio
