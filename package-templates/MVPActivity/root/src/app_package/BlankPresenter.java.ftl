@@ -1,4 +1,4 @@
-package ${packageName};
+package ${packageName}.${packName};
 
 <#if applicationPackage??>import ${applicationPackage}.dagger.PerActivity;</#if>
 <#if includeClient??><#if applicationPackage??>import ${applicationPackage}.data.api.${clientName};</#if></#if>
@@ -21,8 +21,8 @@ public class ${Name}Presenter extends Presenter<${Name}View> {
     this.api = api;
     </#if>
   }
-  
   <#if includeClient??>
+ 
   @Override protected void onDestroyed() {
     RxUtils.unSubscribeIfNeeded(dataSubscription);
   }

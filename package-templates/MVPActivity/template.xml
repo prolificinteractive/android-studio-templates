@@ -2,8 +2,8 @@
 <template
     format="4"
     revision="2"
-    name="Fragment"
-    description="Creates a fragment with its view and presenter"
+    name="Activity"
+    description="Creates an activity and its View/Presenter and Component/Module"
     minApi="3"
     minBuildApi="3">
 
@@ -11,19 +11,19 @@
 
     <parameter
         id="className"
-        name="Fragment Name"
+        name="Activity Name"
         type="string"
-        constraints="class|nonempty|unique"
-        default="BlankFragment"
-        help="The name of the fragment class to create" />
+        constraints="activity|nonempty|unique"
+        default="BlankActivity"
+        help="The name of the activity class to create" />
 
     <parameter
-        id="fragmentName"
-        name="Fragment Layout Name"
+        id="activityName"
+        name="Activity Layout Name"
         type="string"
         constraints="layout|nonempty|unique"
-        default="fragment_blank"
-        suggest="fragment_${classToResource(className)}"
+        default="activity_blank"
+        suggest="activity_${classToResource(className)}"
         help="The name of the layout to create" />
 
     <parameter
@@ -34,21 +34,31 @@
         default="Blank"
         visibility="false"
         suggest="${underscoreToCamelCase(classToResource(className))}"
-        help="The name of the view model to create" />
-        
+        help="The name of the presenter to create" />
+
+    <parameter
+        id="packName"
+        name="Package Name"
+        type="string"
+        constraints="nonempty|unique"
+        default="blank"
+        visibility="false"
+        suggest="${classToResource(className)}"
+        help="The name of the package to create" />
+
     <parameter
         id="includeComponent"
-        name="Include component?"
+        name="Include activity component?"
         type="boolean"
         default="true"
-        help="Add dagger 2 component to fragment" />
+        help="Add dagger 2 component to activity" />
 
     <parameter
         id="includeClient"
         name="Include api client in presenter?"
         type="boolean"
         default="true"
-        help="Include api client in presenter" />
+        help="Add api client to presenter" />
 
     <parameter
         id="clientName"
