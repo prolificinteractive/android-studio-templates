@@ -32,6 +32,9 @@ A set of Android studio package/activities/classes templates.
 
 Make sure to check sample to have an idea of the result for each template.
 
+## TODO
+
+* Automatically install templates using a Script.
 
 ## Want to Contribute?
 
