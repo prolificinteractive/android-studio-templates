@@ -1,7 +1,5 @@
 package ${packageName};
 
-import android.content.Intent;
-import ${packageName}.R;
 <#if applicationPackage??>import ${applicationPackage}.R;</#if>
 <#if applicationPackage??>import ${applicationPackage}.dagger.Injector;</#if>
 <#if applicationPackage??>import ${applicationPackage}.ui.base.mvp.PresenterFragment;</#if>
