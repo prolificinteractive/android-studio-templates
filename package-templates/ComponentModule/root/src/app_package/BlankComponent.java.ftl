@@ -1,9 +1,21 @@
 package ${packageName};
 
-import ${packageName}.${Name}Module;
+<#if componentType == "component" && applicationPackage??>import ${applicationPackage}.dagger.Injector;</#if>
+<#if applicationPackage??>import ${applicationPackage}.dagger.PerActivity;</#if>
+<#if componentType == "subcomponent">
+import dagger.Subcomponent;
+<#else>
 import dagger.Component;
+</#if>
 
 @PerActivity
+<#if componentType == "subcomponent">
+@Subcomponent(
+    modules = {
+        ${Name}Module.class
+    }
+)
+<#else>
 @Component(
     modules = {
         ${Name}Module.class,
@@ -11,9 +23,12 @@ import dagger.Component;
     },
     dependencies = YourAppComponent.class
 )
+</#if>
 public interface ${Name}Component {
   void inject(${className} activity);
 
+  <#if componentType == "subcomponent">
+  <#else>
   final class Initializer {
     private Initializer() {
       throw new AssertionError("No instances.");
@@ -28,4 +43,5 @@ public interface ${Name}Component {
           .build();
     }
   }
+  </#if>
 }

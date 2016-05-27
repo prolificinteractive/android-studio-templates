@@ -3,17 +3,26 @@
     format="4"
     revision="2"
     name="Component"
-    description="Creates a component for an activity"
+    description="Creates a component/subcomponent for an activity"
     minApi="3"
     minBuildApi="3">
 
     <category value="Dagger" />
 
     <parameter
+        id="componentType"
+        name="Component Type"
+        type="enum"
+        default="component">
+        <option id="component" default="true">Component</option>
+        <option id="subcomponent">Subcomponent</option>
+    </parameter>
+
+    <parameter
         id="className"
         name="Activity Name"
         type="string"
-        constraints="activity|nonempty|unique"
+        constraints="activity|nonempty"
         default="BlankActivity"
         help="The name of the activity class to create a component for" />
 
