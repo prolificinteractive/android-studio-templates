@@ -44,11 +44,21 @@
         help="Add dagger 2 component to fragment" />
 
     <parameter
-        id="apiCall"
+        id="includeClient"
         name="Include api client in presenter?"
         type="boolean"
         default="true"
         help="Include api client in presenter" />
+
+    <parameter
+        id="clientName"
+        name="Api Client Name"
+        type="string"
+        constraints="nonempty"
+        default="YourApiClient"
+        visibility="includeClient"
+        suggest="YourApiClient"
+        help="The name of your api client" />
 
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />

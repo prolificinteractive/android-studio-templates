@@ -60,6 +60,16 @@
         default="true"
         help="Add api client to presenter" />
 
+    <parameter
+        id="clientName"
+        name="Api Client Name"
+        type="string"
+        constraints="nonempty"
+        default="YourApiClient"
+        visibility="includeClient"
+        suggest="YourApiClient"
+        help="The name of your api client" />
+
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />
 
