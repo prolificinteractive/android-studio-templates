@@ -1,17 +1,41 @@
-Android Studio Templates
-======================================
+# Android Studio Templates
 
 A set of Android studio package/activities/classes templates.
 
-Installation of templates
--------------------------
+## What to do
+
+### Installation
 
  * Copy templates you want to include in Android Studio from the package-templates folder.
  * Go to your Android Studio app, then Contents/plugins/android/lib/templates/other (Full path: /Applications/Android Studio.app/Contents/plugins/android/lib/templates/other).
  * Paste the templates in the 'other' folder
  * Restart Android Studio if it's running.
- * Right click package -> New
- * Use new templates
+
+### Usage
+
+ * Launch Android Studio
+ * `Right click -> New` where you want to use the new template. Look for your new template and use it. 
+ * Complete the form with your information.
+ * Hit finish and enjoy!
+
+## List of templates
+
+1. Dagger
+	* Component
+	* Component/Module
+2. MVVM
+	* Activity package (Activity/ViewModel/View/Layout)
+	* Fragment package (Fragment/ViewModel/View/Layout)
+3. MVP
+	* Activity package (Activity/View/Presenter/Component/Module/Layout)
+	* Fragment package (Fragment/Presenter/View/Layout)
+
+Make sure to check sample to have an idea of the result for each template.
+
+
+## Want to Contribute?
+
+Submit your template ideas (issues or pull requests) and report any problems faced with current ones.
 
 ## License
 
