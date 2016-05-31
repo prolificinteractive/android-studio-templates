@@ -25,6 +25,7 @@ Note 2: Android Studio will remove the template on each update. You need to inst
 ## List of templates
 
 1. Dagger
+	* Dagger setup (PerApp/PerActivity/Injector/HasComponent/AppComponent/AppModule)
 	* Component
 	* Component/Module
 2. MVVM
