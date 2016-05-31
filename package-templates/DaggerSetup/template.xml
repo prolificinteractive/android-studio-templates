@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<template
+    format="4"
+    revision="2"
+    name="Dagger Setup"
+    description="Setup the dagger package with interfaces, injector and app Component/Module"
+    minApi="3"
+    minBuildApi="3">
+
+    <category value="Dagger" />
+
+    <parameter
+        id="includeHasComponent"
+        name="Include HasComponent interface?"
+        type="boolean"
+        default="true"
+        help="Add HasComponent interface" />
+
+    <parameter
+        id="includeQualifiers"
+        name="Include qualifiers class?"
+        type="boolean"
+        default="true"
+        help="Add qualifiers class" />
+
+    <parameter
+        id="includeAppComponent"
+        name="Include app component?"
+        type="boolean"
+        default="true"
+        help="Add app component and module" />
+
+    <parameter
+        id="Name"
+        name="Application class Name"
+        type="string"
+        constraints="class|nonempty"
+        default="YourApp"
+        visibility="includeAppComponent"
+        suggest="YourApp"
+        help="The name of your application class" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
